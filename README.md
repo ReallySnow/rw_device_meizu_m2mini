@@ -11,7 +11,7 @@ Getting Started
 
 Download manifes for RedWorf
 
-        repo init -u git://github.com/RedWolfRecovery/rw_manifest.git -b rw
+        repo init -u git://github.com/RedWolfRecovery/rw_manifest.git -b rw-n
      
          repo sync
     
