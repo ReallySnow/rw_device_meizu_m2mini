@@ -64,4 +64,9 @@ BOARD_CACHEIMAGE_PARTITION_SIZE := 419439400
 BOARD_FLASH_BLOCK_SIZE := 131072
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x03f88000 --tags_offset 0x0df88000 --board 1450664547 
 
+#fstab
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/recovery.fstab
 
+#SE
+# Sepolicy hack for old kernel, our mt6735 version is 29
+POLICYVERS := 29
