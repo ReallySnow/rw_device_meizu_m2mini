@@ -1,12 +1,22 @@
-LOCAL_PATH:= $(call my-dir)
+#
+# Copyright (C) 2016 The CyanogenMod Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
 
-include $(call first-makefiles-under,$(LOCAL_PATH))
+LOCAL_PATH := $(call my-dir)
 
-include $(CLEAR_VARS)
-
-ifneq ($(TARGET_PREBUILT_KERNEL),)
-# Some modules (ex. external/tinycompress depend on $(KERNEL_OUT)/usr,
-# but this folder is not created for prebuilt kernel, let'c create it
-$(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr:
-	mkdir -p $@
+ifeq ($(TARGET_DEVICE),m81)
+include $(call all-makefiles-under,$(LOCAL_PATH))
 endif
+
